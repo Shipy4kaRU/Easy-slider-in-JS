@@ -103,8 +103,7 @@ img {
 }
 
 .dots__dot--active {
-  /* background-color: #fff; */
-  background-color: #474747;
+  background-color: #fff;
   opacity: 1;
 }
 
