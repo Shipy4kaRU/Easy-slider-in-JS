@@ -14,13 +14,22 @@ const getSlide = function (slide) {
 
 getSlide(0);
 
-btnRight.addEventListener("click", function () {
+const nextSlide = function () {
   if (currentSlide === allSlides.length - 1) currentSlide = 0;
   else currentSlide++;
   getSlide(currentSlide);
-});
-btnLeft.addEventListener("click", function () {
+};
+
+const previousSlide = function () {
   if (currentSlide === 0) currentSlide = allSlides.length - 1;
   else currentSlide--;
   getSlide(currentSlide);
+};
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowRight") nextSlide();
+  else if (e.key === "ArrowLeft") previousSlide();
 });
+
+btnRight.addEventListener("click", nextSlide);
+btnLeft.addEventListener("click", previousSlide);
