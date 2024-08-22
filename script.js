@@ -29,6 +29,8 @@ const activateDot = function (slide) {
     .classList.add("dots__dot--active");
 };
 
+activateDot(0);
+
 dotsContainer.addEventListener("click", function (e) {
   if (!e.target.classList.contains("dots__dot")) return;
   getSlide(e.target.dataset.slide);
